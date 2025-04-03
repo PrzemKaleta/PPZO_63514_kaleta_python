@@ -32,17 +32,31 @@ def switch_menu(menu_option):
         case 2:
              print("Konwerter temperatur (Celsjusz ↔ Fahrenheit")
              zad2_option = input("Wybierz kierunek konwersji (C = (Celsjusz -> Fahrenheit) F = (Fahrenheit -> Celsjusz)): " )
-             c = int(input("Wprowadz wartosc temperatury: "))
+             wartosc = int(input("Wprowadz wartosc temperatury: "))
              if zad2_option in ("C", "c"):
-                    wynik2 = c * 1.8 + 32
+                    wynik2 = wartosc * 1.8 + 32
                     return (f"Wynik = {wynik2}°F")
              elif zad2_option in ("F", "f"):
-                    wynik2 = (c - 32) / 1.8
+                    wynik2 = (wartosc - 32) / 1.8
                     return (f"Wynik = {wynik2}°C")
              else:
                  return "Blednie wprowadzony kierunek konwersji"
         case 3:
              print("Srednia ocen ucznia")
+             liczba_ocen = int(input("Podaj liczbe ocen: "))
+             suma_ocen = 0
+             for i in range(0, liczba_ocen):
+                 ocena = int(input("Podaj ocene: "))
+                 if ocena > 0 and ocena < 7:
+                     suma_ocen = suma_ocen + ocena
+                 else:
+                     return "Wprowadzono bledna ocene (poza zakresem 1-6)"
+             wynik3 = suma_ocen / liczba_ocen
+             print(f"Srednia ocen ucznia wynosi: {wynik3}")
+             if wynik3 > 3:
+                 return "Uczen spelnil warunek zaliczenia"
+             else:
+                 return "Uczen nie spelnil warunku zaliczenia"
         case _:
              return "Niepoprawna opcja"
 
