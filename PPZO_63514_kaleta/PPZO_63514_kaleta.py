@@ -30,9 +30,19 @@ def switch_menu(menu_option):
                  return "Bledna operacja arytmetyczna" 
              return (f"Wynik = {wynik1}")
         case 2:
-             return "Menu2"
+             print("Konwerter temperatur (Celsjusz ↔ Fahrenheit")
+             zad2_option = input("Wybierz kierunek konwersji (C = (Celsjusz -> Fahrenheit) F = (Fahrenheit -> Celsjusz)): " )
+             c = int(input("Wprowadz wartosc temperatury: "))
+             if zad2_option in ("C", "c"):
+                    wynik2 = c * 1.8 + 32
+                    return (f"Wynik = {wynik2}°F")
+             elif zad2_option in ("F", "f"):
+                    wynik2 = (c - 32) / 1.8
+                    return (f"Wynik = {wynik2}°C")
+             else:
+                 return "Blednie wprowadzony kierunek konwersji"
         case 3:
-             return "Menu3"
+             print("Srednia ocen ucznia")
         case _:
              return "Niepoprawna opcja"
 
