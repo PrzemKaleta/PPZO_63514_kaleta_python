@@ -53,7 +53,7 @@ def switch_menu(menu_option):
                      return "Wprowadzono bledna ocene (poza zakresem 1-6)"
              wynik3 = suma_ocen / liczba_ocen
              print(f"Srednia ocen ucznia wynosi: {wynik3}")
-             if wynik3 > 3:
+             if wynik3 >= 3:
                  return "Uczen spelnil warunek zaliczenia"
              else:
                  return "Uczen nie spelnil warunku zaliczenia"
